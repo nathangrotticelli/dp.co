@@ -1,13 +1,7 @@
 <?php
 require 'PHPMailer-master/PHPMailerAutoload.php';
 // Email Submit
-  function send_mail($mail){
-      if(!$mail->Send()) {
-         // echo json_encode(array('info' => 'error', 'msg' => __ERROR_MESSAGE__));
-      } else {
-            // echo json_encode(array('info' => 'success', 'msg' => __SUCCESS_MESSAGE__));
-      }
-    }
+
 // Note: filter_var() requires PHP >= 5.2.0
 if ( isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message']) ) {
 
@@ -74,8 +68,8 @@ if ( isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message'])
       // $headers  = 'MIME-Version: 1.0' . "\r\n";
       // $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
       // $headers .= 'From: ' . $mail . "\r\n";
-
-      send_mail($mail);
+      $mail->Send();
+      // send_mail($mail);
 
   //  Replace with your email
 }
