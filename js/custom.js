@@ -13,20 +13,20 @@ jQuery(window).load(function() {
 ===  MAILCHIMP                 ====
 =================================== */
 
-$('.mailchimp').ajaxChimp({
-    callback: mailchimpCallback,
-    url: "http://webdesign7.us6.list-manage.com/subscribe/post?u=9445a2e155b82208d73433060&amp;id=16dc80e353" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".
-});
+// $('.mailchimp').ajaxChimp({
+//     callback: mailchimpCallback,
+//     url: "http://webdesign7.us6.list-manage.com/subscribe/post?u=9445a2e155b82208d73433060&amp;id=16dc80e353" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".
+// });
 
-function mailchimpCallback(resp) {
-     if (resp.result === 'success') {
-        $('.subscription-success').html('<i class="icon_check_alt2"></i><br/>' + resp.msg).fadeIn(1000);
-        $('.subscription-error').fadeOut(500);
+// function mailchimpCallback(resp) {
+//      if (resp.result === 'success') {
+//         $('.subscription-success').html('<i class="icon_check_alt2"></i><br/>' + resp.msg).fadeIn(1000);
+//         $('.subscription-error').fadeOut(500);
 
-    } else if(resp.result === 'error') {
-        $('.subscription-error').html('<i class="icon_close_alt2"></i><br/>' + resp.msg).fadeIn(1000);
-    }
-}
+//     } else if(resp.result === 'error') {
+//         $('.subscription-error').html('<i class="icon_close_alt2"></i><br/>' + resp.msg).fadeIn(1000);
+//     }
+// }
 
 /* =================================
 ===  STICKY NAV                 ====
