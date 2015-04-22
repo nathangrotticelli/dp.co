@@ -52,7 +52,7 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
     } else if($email == '' or check_email($email) == false){
       echo json_encode(array('info' => 'error', 'msg' => "Please enter valid e-mail."));
       exit();
-    } else if($comment == ''){
+    } else if($message == ''){
       echo json_encode(array('info' => 'error', 'msg' => "Please enter your message."));
       exit();
     } else {
@@ -78,7 +78,7 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
       //Send Mail
       // $to = __TO__;
       // $subject = __SUBJECT__ . ' ' . $name;
-      $message = '
+      $emailBody = '
       <html>
       <body>
         <table style="width: 500px; font-family: arial; font-size: 14px;" border="1">
@@ -92,14 +92,14 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
         </tr>
         <tr style="height: 32px;">
           <th align="center" style="width:140px;">Message:</th>
-          <td align="left" style="padding-left:10px; line-height: 20px;">'. $comment .'</td>
+          <td align="left" style="padding-left:10px; line-height: 20px;">'. $message .'</td>
         </tr>
         </table>
         <div style="padding-left:9px;"><br>(Click reply to respond)</div>
       </body>
       </html>
       ';
-      $mail->Body = $message;
+      $mail->Body = $emailBody;
       $mail->isHTML(true);
 
 
