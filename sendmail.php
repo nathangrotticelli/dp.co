@@ -1,61 +1,29 @@
 <?php
-
-  /* ==========================  Define variables ========================== */
-
 require 'PHPMailer-master/PHPMailerAutoload.php';
-
-  #Success message
-  define('__SUCCESS_MESSAGE__', "Your message has been sent. Thank you!");
-
-  #Error message
-  define('__ERROR_MESSAGE__', "Error, your message hasn't been sent");
-
-  #Messege when one or more fields are empty
-  define('__MESSAGE_EMPTY_FILDS__', "Please fill out  all fields");
-
-  /* ========================  End Define variables ======================== */
-
-  //Send mail function
+// Email Submit
   function send_mail($mail){
       if(!$mail->Send()) {
-         echo json_encode(array('info' => 'error', 'msg' => __ERROR_MESSAGE__));
-
+         // echo json_encode(array('info' => 'error', 'msg' => __ERROR_MESSAGE__));
       } else {
-            echo json_encode(array('info' => 'success', 'msg' => __SUCCESS_MESSAGE__));
+            // echo json_encode(array('info' => 'success', 'msg' => __SUCCESS_MESSAGE__));
       }
-    // if(@mail($to,$subject,$message,$headers)){
-    //  echo json_encode(array('info' => 'success', 'msg' => __SUCCESS_MESSAGE__));
-    // } else {
-    //  echo json_encode(array('info' => 'error', 'msg' => __ERROR_MESSAGE__));
-    // }
-  }
-
-  //Check e-mail validation
-  function check_email($email){
-    if(!@eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $email)){
-      return false;
-    } else {
-      return true;
     }
-  }
+// Note: filter_var() requires PHP >= 5.2.0
+if ( isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message']) ) {
 
-  //Get post data
-  if(isset($_POST['name']) and isset($_POST['email']) and isset($_POST['message'])){
-    $name    = $_POST['name'];
+  // detect & prevent header injections
+  // $test = "/(content-type|bcc:|cc:|to:)/i";
+  // foreach ( $_POST as $key => $val ) {
+  //   if ( preg_match( $test, $val ) ) {
+  //     exit;
+  //   }
+  // }
+
+      $name    = $_POST['name'];
     $mail2   = $_POST['email'];
     // $website  = $_POST['website'];
     $comment = $_POST['message'];
 
-    if($name == '') {
-      echo json_encode(array('info' => 'error', 'msg' => "Please enter your name."));
-      exit();
-    } else if($mail2 == '' or check_email($mail2) == false){
-      echo json_encode(array('info' => 'error', 'msg' => "Please enter valid e-mail."));
-      exit();
-    } else if($comment == ''){
-      echo json_encode(array('info' => 'error', 'msg' => "Please enter your message."));
-      exit();
-    } else {
       $mail = new PHPMailer();
 
       $mail->IsSMTP();  // telling the class to use SMTP
@@ -73,7 +41,7 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
 
       $mail->AddAddress("nathangrotticelli@gmail.com");
 
-      $mail->Subject  = "New MultiDyne Website Contact Submission";
+      $mail->Subject  = "New DP Website Contact Submission";
       // $mail->WordWrap = 60;
       //Send Mail
       // $to = __TO__;
@@ -108,8 +76,7 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
       // $headers .= 'From: ' . $mail . "\r\n";
 
       send_mail($mail);
-    }
-  } else {
-    echo json_encode(array('info' => 'error', 'msg' => __MESSAGE_EMPTY_FILDS__));
-  }
- ?>
+
+  //  Replace with your email
+}
+?>
