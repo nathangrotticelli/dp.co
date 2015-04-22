@@ -223,9 +223,8 @@ $("#subscribe").submit(function (e) {
                 cache: false,
                 data: $('.contact-work-form2').serialize(),
                 success: function(data) {
-
                     if(data.info !== 'error'){
-                        $this.parents('form').find('input[type=text],textarea,select').filter(':visible').val('');
+                        // $this.parents('form').find('input[type=text],textarea,select').filter(':visible').val('');
                         message.hide().removeClass('success').removeClass('error').addClass('success').html(data.msg).fadeIn('slow').delay(2350).fadeOut('slow');
                     } else {
                         message.hide().removeClass('success').removeClass('error').addClass('error').html(data.msg).fadeIn('slow').delay(2000).fadeOut('slow');
