@@ -241,13 +241,15 @@ $("#subscribe").submit(function (e) {
 
    $("#contact").submit(function (e) {
         e.preventDefault();
+
         var $this = $(this);
+
             $.ajax({
                 type: "POST",
                 url: 'sendmail.php',
                 dataType: 'json',
                 cache: false,
-                data: $('.contact-work-form2').serialize(),
+                data: $('#contact').serialize(),
                 success: function(data2) {
                     if(data2.info !== 'error'){
                         $this.parents('form').find('input[type=text],textarea,select').filter(':visible').val('');
