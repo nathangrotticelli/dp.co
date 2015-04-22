@@ -3,7 +3,7 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
 // Email Submit
 
 // Note: filter_var() requires PHP >= 5.2.0
-if ( isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message']) ) {
+// if ( isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message']) ) {
 
   // detect & prevent header injections
   // $test = "/(content-type|bcc:|cc:|to:)/i";
@@ -13,10 +13,10 @@ if ( isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message'])
   //   }
   // }
 
-      $name    = $_POST['name'];
-    $mail2   = $_POST['email'];
+      $name    = 'fsdfsd';
+    $mail2   = 'dsf';
     // $website  = $_POST['website'];
-    $comment = $_POST['message'];
+    $comment ='sdf';
 
       $mail = new PHPMailer();
 
@@ -72,5 +72,5 @@ if ( isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message'])
       // send_mail($mail);
 
   //  Replace with your email
-}
+// }
 ?>
