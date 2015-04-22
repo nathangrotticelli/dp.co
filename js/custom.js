@@ -208,7 +208,7 @@ $("#subscribe").submit(function (e) {
 /* =================================
 ===  CONTACT FORM          ====
 =================================== */
-$("#contact").submit(function (e) {
+$('.submit_contact').on('click', function(e){
     e.preventDefault();
     var name = $("#name").val();
     var email = $("#email").val();
@@ -226,7 +226,7 @@ $("#contact").submit(function (e) {
             type: "POST",
             url: "sendmail.php",
             dataType: 'json',
-            data: $('#contact').serialize(),
+            data: $('.sA1').serialize(),
             success: function () {
                 $('.success').fadeIn(1000);
                 $('.error').fadeOut(500);
