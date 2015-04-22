@@ -249,8 +249,8 @@ var eF2 = $('.expand-form2');
 var eC1 = $('.expanded-contact-form');
 var eC2 = $('.expanded-contact-form2');
 var htmBody = $('html, body');
-var cB = $('.copyBreak');
-cB.hide();
+// var cB = $('.copyBreak');
+// cB.hide();
 
 eF1.simpleexpand({
     'defaultTarget': '.expanded-contact-form'
@@ -258,8 +258,8 @@ eF1.simpleexpand({
 
 eF1.click(function(){
     htmBody.animate({scrollTop: $('.contact-box').position().top}, 'slow');
-    eC2.fadeOut(200);
-    cB.toggle();
+    eC2.fadeOut(150);
+    // cB.toggle();
 });
 
 eF2.simpleexpand({
@@ -268,8 +268,8 @@ eF2.simpleexpand({
 
 eF2.click(function(){
     htmBody.animate({scrollTop: $('.contact-box').position().top}, 'slow');
-    eC1.fadeOut(200);
-    cB.hide();
+    eC1.fadeOut(150);
+    // cB.hide();
 });
 
 /* =================================

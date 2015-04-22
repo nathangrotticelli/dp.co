@@ -724,8 +724,19 @@ footer .copyright {
     margin-top: 65px;
     margin-bottom: -15px;
 }
+.sA1{
+     -webkit-animation-duration: 1.4s;
+     -webkit-animation-delay: .3s;
+}
+.services .fadeIn{
+    -webkit-animation-duration: 1.4s;
+     -webkit-animation-delay: .3s;
+}
 .topLogo{
       -webkit-animation-duration: 2s;
   -webkit-animation-delay: 1.5s;
   /*-webkit-animation-iteration-count: infinite!important;*/
+}
+.single-service p{
+    font-size: 17px;
 }
