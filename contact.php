@@ -62,16 +62,16 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
       $mail->Host     = "smtp.gmail.com"; // SMTP server
       $mail->SMTPAuth = true;
       $mail->SMTPDebug = 0;
-      $mail->Username = 'MultiDyneResponder@gmail.com';
-      $mail->Password = 'MultiDyne';
+      $mail->Username = 'dimepieceapp@gmail.com';
+      $mail->Password = 'Lilbill666';
       $mail->SMTPSecure = 'tls';
       $mail-> Port    = 587;
       // $mail->From     = "nmg2225@yahoo.com";
       // $mail->FromName = $name;
-      $mail->SetFrom("multidyneresponder@gmail.com",$name);
+      $mail->SetFrom("dimepieceapp@gmail.com",$name);
       $mail->AddReplyTo($mail2, $name);
 
-      $mail->AddAddress("nathangrotticelli@gmail.com");
+      $mail->AddAddress("dimepieceapp@gmail.com");
 
       $mail->Subject  = "New DP Website Contact Submission";
       // $mail->WordWrap = 60;
