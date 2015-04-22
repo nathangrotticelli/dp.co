@@ -42,14 +42,14 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
   //Get post data
   if(isset($_POST['name']) and isset($_POST['email']) and isset($_POST['message'])){
     $name    = $_POST['name'];
-    $email   = $_POST['email'];
+    $mail2   = $_POST['email'];
     // $website  = $_POST['website'];
     $comment = $_POST['message'];
 
     if($name == '') {
       echo json_encode(array('info' => 'error', 'msg' => "Please enter your name."));
       exit();
-    } else if($email == '' or check_email($email) == false){
+    } else if($mail2 == '' or check_email($mail2) == false){
       echo json_encode(array('info' => 'error', 'msg' => "Please enter valid e-mail."));
       exit();
     } else if($comment == ''){
@@ -69,11 +69,11 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
       // $mail->From     = "nmg2225@yahoo.com";
       // $mail->FromName = $name;
       $mail->SetFrom("multidyneresponder@gmail.com",$name);
-      $mail->AddReplyTo($email, $name);
+      $mail->AddReplyTo($mail2, $name);
 
       $mail->AddAddress("nathangrotticelli@gmail.com");
 
-      $mail->Subject  = "New DP Website Contact Submission";
+      $mail->Subject  = "New MultiDyne Website Contact Submission";
       // $mail->WordWrap = 60;
       //Send Mail
       // $to = __TO__;
@@ -88,7 +88,7 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
         </tr>
         <tr style="height: 32px;">
           <th align="center" style="width:140px;">E-mail:</th>
-          <td align="left" style="padding-left:10px; line-height: 20px;">'. $email .'</td>
+          <td align="left" style="padding-left:10px; line-height: 20px;">'. $mail2 .'</td>
         </tr>
         <tr style="height: 32px;">
           <th align="center" style="width:140px;">Message:</th>
