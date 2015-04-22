@@ -18,7 +18,7 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
   //Send mail function
   function send_mail($mail){
       if(!$mail->Send()) {
-         echo json_encode(array('info' => 'error', 'msg' => $mail->ErrorInfo));
+         echo json_encode(array('info' => 'error', 'msg' => __ERROR_MESSAGE__));
 
       } else {
             echo json_encode(array('info' => 'success', 'msg' => __SUCCESS_MESSAGE__));
