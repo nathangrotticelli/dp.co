@@ -727,7 +727,6 @@ footer .copyright {
 .sA1{
      -webkit-animation-duration: 1.4s;
      -webkit-animation-delay: .3s;
-     margin-bottom: 100px;
 }
 .services .fadeIn{
     -webkit-animation-duration: 1.4s;
@@ -737,6 +736,9 @@ footer .copyright {
       -webkit-animation-duration: 2s;
   -webkit-animation-delay: 1.5s;
   /*-webkit-animation-iteration-count: infinite!important;*/
+}
+.here22{
+    margin-bottom: 180px;
 }
 .single-service p{
     font-size: 17px;
