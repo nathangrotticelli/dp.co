@@ -63,7 +63,7 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
       $mail->SMTPAuth = true;
       $mail->SMTPDebug = 0;
       $mail->Username = 'MultiDyneResponder@gmail.com';
-      $mail->Password = 'multidyne';
+      $mail->Password = 'MultiDyne';
       $mail->SMTPSecure = 'tls';
       $mail-> Port    = 587;
       // $mail->From     = "nmg2225@yahoo.com";
