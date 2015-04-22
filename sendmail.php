@@ -44,7 +44,7 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
     $name    = $_POST['name'];
     $email   = $_POST['email'];
     // $website  = $_POST['website'];
-    $message = $_POST['message'];
+    $comment = $_POST['message'];
 
     if($name == '') {
       echo json_encode(array('info' => 'error', 'msg' => "Please enter your name."));
@@ -52,7 +52,7 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
     } else if($email == '' or check_email($email) == false){
       echo json_encode(array('info' => 'error', 'msg' => "Please enter valid e-mail."));
       exit();
-    } else if($message == ''){
+    } else if($comment == ''){
       echo json_encode(array('info' => 'error', 'msg' => "Please enter your message."));
       exit();
     } else {
@@ -73,12 +73,12 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
 
       $mail->AddAddress("nathangrotticelli@gmail.com");
 
-      $mail->Subject  = "New Dimepiece Website Contact Submission";
+      $mail->Subject  = "New DP Website Contact Submission";
       // $mail->WordWrap = 60;
       //Send Mail
       // $to = __TO__;
       // $subject = __SUBJECT__ . ' ' . $name;
-      $emailBody = '
+      $message = '
       <html>
       <body>
         <table style="width: 500px; font-family: arial; font-size: 14px;" border="1">
@@ -92,14 +92,14 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
         </tr>
         <tr style="height: 32px;">
           <th align="center" style="width:140px;">Message:</th>
-          <td align="left" style="padding-left:10px; line-height: 20px;">'. $message .'</td>
+          <td align="left" style="padding-left:10px; line-height: 20px;">'. $comment .'</td>
         </tr>
         </table>
         <div style="padding-left:9px;"><br>(Click reply to respond)</div>
       </body>
       </html>
       ';
-      $mail->Body = $emailBody;
+      $mail->Body = $message;
       $mail->isHTML(true);
 
 
