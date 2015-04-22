@@ -275,7 +275,7 @@ eF1.simpleexpand({
 
 eF1.click(function(){
     htmBody.animate({scrollTop: $('.contact-box').position().top}, 'slow');
-    eC2.fadeOut(150);
+    eC2.fadeOut(100);
     // cB.toggle();
 });
 
@@ -285,7 +285,7 @@ eF2.simpleexpand({
 
 eF2.click(function(){
     htmBody.animate({scrollTop: $('.contact-box').position().top}, 'slow');
-    eC1.fadeOut(150);
+    eC1.fadeOut(100);
     // cB.hide();
 });
 

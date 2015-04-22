@@ -725,12 +725,12 @@ footer .copyright {
     margin-bottom: -15px;
 }
 .sA1{
-     -webkit-animation-duration: 1.4s;
-     -webkit-animation-delay: .3s;
+     -webkit-animation-duration: 1.15s;
+     -webkit-animation-delay: .25s;
 }
 .services .fadeIn{
-    -webkit-animation-duration: 1.4s;
-     -webkit-animation-delay: .3s;
+    -webkit-animation-duration: 1.15s;
+     -webkit-animation-delay: .25s;
 }
 .topLogo{
       -webkit-animation-duration: 2s;
@@ -742,4 +742,9 @@ footer .copyright {
 }
 .single-service p{
     font-size: 17px;
+}
+@media (max-width: 1160px) {
+    footer .copyright {
+        display: none;
+    }
 }
