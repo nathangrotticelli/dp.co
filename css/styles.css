@@ -179,6 +179,9 @@ h5 {
       -webkit-animation-duration: 2s;
   -webkit-animation-delay: 3s;
 }
+.breakSpace{
+    display: none;
+}
 .standard-button,
 .standard-button2 {
     font-size: 18px;
@@ -188,8 +191,8 @@ h5 {
     color: #ffffff;
     min-width: 185px;
     border: none;
-    padding-left: 22px;
-    padding-top: 12px;
+    /*padding-left: 22px;*/
+    padding-top: 10px;
     padding-bottom: 0px;
     margin: auto;
     -webkit-transition: all ease 0.25s;
@@ -204,7 +207,7 @@ h5 {
 .standard-button i,
 .standard-button2 i {
     vertical-align: inherit;
-    margin-right: 8px;
+    /*margin-right: 8px;*/
     font-size: 20px;
 }
 
@@ -327,7 +330,7 @@ header .full-screen {
 header .only-logo .navbar {
     background: none;
     padding: 60px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     padding-top: 150px;
 }
 
@@ -744,7 +747,6 @@ footer .copyright {
 .topLogo{
       -webkit-animation-duration: 2s;
   -webkit-animation-delay: 1.5s;
-  /*-webkit-animation-iteration-count: infinite!important;*/
 }
 .here22{
     margin-bottom: 180px;
@@ -757,3 +759,16 @@ footer .copyright {
         display: none;
     }
 }
+@media (max-width: 500px){
+     .navbar-header img{
+        width:20%;
+    }
+    .breakSpace{
+        display: block;
+    }
+    .appleIcon{
+        line-height: .8;
+    }
+}
+
+
